@@ -14,17 +14,12 @@ const getRandomNumber = (minNumber, maxNumber) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-// const checkStringLength = (string, maxStringLength) => {
-//   const length = String(string).length;
-//   const number = Number(maxStringLength);
-//
-//   return length <= number;
-// };
+const checkStringLength = (string, maxStringLength) => {
+  const length = String(string).length;
+  const number = Number(maxStringLength);
 
-const arrayWithDescId = [];
-const arrayWithCommentId = [];
-const arrayWithImgUrl = [];
-const arrayWithAvatarUrl = [];
+  return length <= number;
+};
 
 const fillArrayWithNumbers = (array, minValue, maxValue) => {
   for (let i = minValue; i <= maxValue; i++) {
@@ -102,28 +97,31 @@ const NAMES = [
 
 const createName = (arrayNames) => arrayNames[getRandomNumber(0, arrayNames.length)];
 
-fillArrayWithNumbers(arrayWithDescId, 1, 25);
-fillArrayWithNumbers(arrayWithCommentId, 100, 200);
-fillArrayWithNumbers(arrayWithImgUrl, 1, 25);
-fillArrayWithNumbers(arrayWithAvatarUrl, 1, 6);
-
-const createComments = () => {
+const createComments = (countComments = getRandomNumber(1, 5)) => {
+  const arrayWithAvatarUrl = [];
+  const arrayWithCommentId = [];
+  fillArrayWithNumbers(arrayWithAvatarUrl, 1, countComments + 1);
+  fillArrayWithNumbers(arrayWithCommentId, 100, (countComments + 10) * 10);
   const createComment = () => ({
     id: getUniqueId(arrayWithCommentId),
     avatar: createUrl(2, getUniqueId(arrayWithAvatarUrl)),
     message: createMassage(MASSAGES_EXPRESSION),
     name: createName(NAMES)
   });
-  return Array.from({length: getRandomNumber(1, 5)}, createComment);
+  return Array.from({length: countComments}, createComment);
 };
 
-const createPublications = () => {
+const createPublications = (numberPublications = 25, numberComments) => {
+  const arrayWithDescId = [];
+  const arrayWithImgUrl = [];
+  fillArrayWithNumbers(arrayWithDescId, 1, numberPublications);
+  fillArrayWithNumbers(arrayWithImgUrl, 1, numberPublications);
   const createPublication = () => ({
     id: getUniqueId(arrayWithDescId),
     url: createUrl(1, getUniqueId(arrayWithImgUrl)),
     description: createPhotoDescription(DESCRIPTIONS),
     likes: getRandomNumber(15, 200),
-    comments: createComments()
+    comments: createComments(numberComments)
   });
-  return Array.from({length: 25}, createPublication);
+  return Array.from({length: numberPublications}, createPublication);
 };
