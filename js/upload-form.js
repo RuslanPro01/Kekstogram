@@ -34,13 +34,11 @@ BODY.addEventListener('keydown', onEscapeKeydown);
 const pristine = new Pristine(imgUploadForm);
 const textHashtags = imgUploadForm.querySelector('.text__hashtags');
 const textInput = imgUploadForm.querySelector('.text-input');
-const textDescription = imgUploadForm.querySelector('.text__description');
 const hashtagValidExp = /^#[a-zA-ZА-Яа-яЁё]{1,20}$/;
 
 imgUploadForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const valid = pristine.validate();
-  valid === true ? console.log('Valid') : console.log('NotValid');
 });
 
 pristine.addValidator(textHashtags, (value) => {
@@ -57,6 +55,6 @@ textInput.addEventListener('focus', () => {
   BODY.removeEventListener('keydown', onEscapeKeydown);
 });
 
-textInput.addEventListener('focus', () => {
-  BODY.removeEventListener('keydown', onEscapeKeydown);
+textInput.addEventListener('blur', () => {
+  BODY.addEventListener('keydown', onEscapeKeydown);
 });
