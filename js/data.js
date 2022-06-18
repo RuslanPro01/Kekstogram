@@ -59,4 +59,4 @@ const createPublications = (numberPublications = 25, numberComments) => {
   return Array.from({length: numberPublications}, createPublication);
 };
 
-export {createPublications};
+//export {createPublications};

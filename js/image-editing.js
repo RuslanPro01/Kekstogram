@@ -58,11 +58,11 @@ effectLevelSlider.noUiSlider.on('update', () => {
 const effectsList = document.querySelector('.effects__list');
 
 effectsList.addEventListener('change', (evt) => {
-  imgUploadPreview.style.filter = null;
   if (evt.target.checked && evt.target.id === 'effect-none') {
     effectLevelSlider.classList.add('visually-hidden');
     imgUploadPreviewInner.style.filter = null;
     imgUploadPreviewInner.removeAttribute('class');
+    effectLevelValue.value = null;
   }
   for (let i = 0; i < EFFECTS.length; i++) {
     const classEffect = EFFECTS[i].className;

@@ -38,7 +38,15 @@ const hashtagValidExp = /^#[a-zA-ZА-Яа-яЁё]{1,20}$/;
 
 imgUploadForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  const valid = pristine.validate();
+  const isValid = pristine.validate();
+  if (isValid) {
+    const formData = new FormData(evt.target);
+    fetch('https://25.javascript.pages.academy/kekstagram',
+      {
+        method: 'POST',
+        body: formData,
+      });
+  }
 });
 
 pristine.addValidator(textHashtags, (value) => {
