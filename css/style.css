@@ -842,6 +842,7 @@ main {
 }
 
 .social__likes {
+  display: block;
   margin: 0;
   margin-left: auto;
   min-width: 125px;
