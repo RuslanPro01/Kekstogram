@@ -57,12 +57,16 @@ effectLevelSlider.noUiSlider.on('update', () => {
 
 const effectsList = document.querySelector('.effects__list');
 
+const resetPhotoEffects = () => {
+  effectLevelSlider.classList.add('visually-hidden');
+  imgUploadPreviewInner.style.filter = null;
+  imgUploadPreviewInner.removeAttribute('class');
+  effectLevelValue.value = null;
+};
+
 effectsList.addEventListener('change', (evt) => {
   if (evt.target.checked && evt.target.id === 'effect-none') {
-    effectLevelSlider.classList.add('visually-hidden');
-    imgUploadPreviewInner.style.filter = null;
-    imgUploadPreviewInner.removeAttribute('class');
-    effectLevelValue.value = null;
+    resetPhotoEffects();
   }
   for (let i = 0; i < EFFECTS.length; i++) {
     const classEffect = EFFECTS[i].className;
@@ -84,3 +88,5 @@ effectsList.addEventListener('change', (evt) => {
     }
   }
 });
+
+export {scaleControl, imgUploadPreview, resetPhotoEffects};
