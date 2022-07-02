@@ -141,3 +141,5 @@ textInputs.forEach((textInput) => {
     evt.stopPropagation();
   });
 });
+
+export {uploadFile};
