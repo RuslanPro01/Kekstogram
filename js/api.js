@@ -2,7 +2,7 @@ import {renderPublications} from './miniature-picture.js';
 import {renderBigPhotoModal} from './render-big-photo-modal.js';
 import {showAlert} from './util.js';
 
-fetch('https://25.javascript.pages.academ/kekstagram/data')
+fetch('https://25.javascript.pages.academy/kekstagram/data')
   .then((response) => {
     if (response.ok) {
       response.json()
