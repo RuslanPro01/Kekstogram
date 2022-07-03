@@ -1,13 +1,15 @@
-import {renderPublications} from './miniature-picture.js';
 import {renderBigPhotoModal} from './render-big-photo-modal.js';
 import {showAlert} from './util.js';
+//import {renderPublications} from './miniature-picture.js';
+import {getPublications} from './filter.js';
 
 fetch('https://25.javascript.pages.academy/kekstagram/data')
   .then((response) => {
     if (response.ok) {
       response.json()
         .then((data) => {
-          renderPublications(data);
+          //renderPublications(data);
+          getPublications(data);
           renderBigPhotoModal(data);
         });
     } else {

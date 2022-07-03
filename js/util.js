@@ -42,4 +42,37 @@ const showAlert = (massage) => {
   setTimeout(() => alertBlock.remove(), 5000);
 };
 
-export {getRandomNumber, checkStringLength, fillArrayWithNumbers, showAlert};
+const createRandomArray = (arrayLength) => {
+  const a1 = [];
+  for (let i = 0; i < arrayLength; i++) {
+    a1.push(i);
+  }
+  const a2 = [];
+  while (a1.length) {
+    const pos = Math.random() * a1.length;
+    const element = a1.splice(pos, 1)[0];
+    a2.push(element);
+  }
+  return a2;
+};
+
+// Функция взята из интернета и доработана
+// Источник - https://www.freecodecamp.org/news/javascript-debounce-example
+
+function debounce(callback, timeoutDelay = 500) {
+  // Используем замыкания, чтобы id таймаута у нас навсегда приклеился
+  // к возвращаемой функции с setTimeout, тогда мы его сможем перезаписывать
+  let timeoutId;
+  return (...rest) => {
+    // Перед каждым новым вызовом удаляем предыдущий таймаут,
+    // чтобы они не накапливались
+    clearTimeout(timeoutId);
+    // Затем устанавливаем новый таймаут с вызовом колбэка на ту же задержку
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+    // Таким образом цикл «поставить таймаут - удалить таймаут» будет выполняться,
+    // пока действие совершается чаще, чем переданная задержка timeoutDelay
+  };
+}
+
+
+export {getRandomNumber, checkStringLength, fillArrayWithNumbers, showAlert, createRandomArray, debounce};

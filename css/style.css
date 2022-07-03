@@ -150,6 +150,10 @@ main {
   border: none;
 }
 
+.img-filters__button:hover {
+  outline: thin solid #ffffff;
+}
+
 .img-filters__button:active,
 .img-filters__button--active {
   color: #ff4e4e;

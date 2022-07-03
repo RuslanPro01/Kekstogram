@@ -5,3 +5,4 @@ import './upload-form.js';
 import './image-editing.js';
 import './api.js';
 import './chhoser-photo-preview.js';
+import './filter.js';
