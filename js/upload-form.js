@@ -2,6 +2,7 @@ import {BODY} from './constants.js';
 import {sendForm} from './api.js';
 import {bigPicture} from './big-picture.js';
 import {resetPhotoEffects} from './image-editing.js';
+import {showAlert} from './util.js';
 
 const imgUploadForm = document.querySelector('.img-upload__form');
 const uploadFile = imgUploadForm.querySelector('#upload-file');
@@ -29,19 +30,30 @@ const onUploadCancelClick = () => {
 uploadFile.addEventListener('change', onFileUploadClick);
 uploadCancel.addEventListener('click', onUploadCancelClick);
 
-const pristine = new Pristine(imgUploadForm);
+const defaultConfig = {
+  classTo: 'text__container',
+  errorClass: 'has-danger',
+  errorTextParent: 'text__container',
+  errorTextTag: 'div',
+  errorTextClass: 'text-help'
+};
+
+const pristine = new Pristine(imgUploadForm, defaultConfig);
 const textHashtags = imgUploadForm.querySelector('.text__hashtags');
 const textInputs = imgUploadForm.querySelectorAll('.text-input');
 const hashtagValidExp = /^#[a-zA-ZА-Яа-яЁё]{1,20}$/;
 
 pristine.addValidator(textHashtags, (value) => {
+  if (value === '') {
+    return true;
+  }
   const hashtags = value.split(' ');
   const isEveryHashtagsValid = hashtags.every((hashtag) => hashtagValidExp.test(hashtag));
   if (hashtags.length > 5) {
     return false;
   }
   return isEveryHashtagsValid;
-});
+}, 'Проверь, стоит ли у хештега хеш «#», разделяй их пробелом, не используй другие символы');
 
 const blockSubmitButton = (button, buttonText = 'Отправляем') => {
   button.disabled = true;

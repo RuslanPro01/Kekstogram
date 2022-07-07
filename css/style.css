@@ -194,7 +194,7 @@ main {
   display: grid;
   grid-gap: 10px;
 
-  -ms-grid-columns: (1fr)[7];
+  -ms-grid-columns: (1fr) [ 7 ];
   grid-template-columns: repeat(7, 1fr);
 }
 
@@ -712,8 +712,24 @@ main {
   color: #000000;
 
   border-radius: 5px;
+  resize: none;
 }
 
+/*
+Блок обработки ошибок при валидации хэштегов и комментария к изображению
+*/
+
+.has-danger .text-input {
+  margin: 0;
+  background-color: #ffcedcff;
+}
+
+.has-danger .text-help {
+  margin: 0 auto 20px;
+  max-width: 450px;
+  text-align: left;
+  text-transform: none;
+}
 
 /**
  * Кнопка для отправки изображения
@@ -979,28 +995,28 @@ main {
 @keyframes spinner {
   0%,
   100% {
-    box-shadow: 0em -2.6em 0em 0em #3b77c0, 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.5), -1.8em -1.8em 0 0em rgba(51,102,204, 0.7);
+    box-shadow: 0em -2.6em 0em 0em #3b77c0, 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2), -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.5), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.7);
   }
   12.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.7), 1.8em -1.8em 0 0em #3b77c0, 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.5);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.7), 1.8em -1.8em 0 0em #3b77c0, 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2), -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.5);
   }
   25% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.5), 1.8em -1.8em 0 0em rgba(51,102,204, 0.7), 2.5em 0em 0 0em #3b77c0, 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.5), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.7), 2.5em 0em 0 0em #3b77c0, 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2), -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   37.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.5), 2.5em 0em 0 0em rgba(51,102,204, 0.7), 1.75em 1.75em 0 0em #3b77c0, 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.5), 2.5em 0em 0 0em rgba(51, 102, 204, 0.7), 1.75em 1.75em 0 0em #3b77c0, 0em 2.5em 0 0em rgba(51, 102, 204, 0.2), -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   50% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.5), 1.75em 1.75em 0 0em rgba(51,102,204, 0.7), 0em 2.5em 0 0em #3b77c0, -1.8em 1.8em 0 0em rgba(51,102,204, 0.2), -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.5), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.7), 0em 2.5em 0 0em #3b77c0, -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.2), -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   62.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.5), 0em 2.5em 0 0em rgba(51,102,204, 0.7), -1.8em 1.8em 0 0em #3b77c0, -2.6em 0em 0 0em rgba(51,102,204, 0.2), -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.5), 0em 2.5em 0 0em rgba(51, 102, 204, 0.7), -1.8em 1.8em 0 0em #3b77c0, -2.6em 0em 0 0em rgba(51, 102, 204, 0.2), -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   75% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.5), -1.8em 1.8em 0 0em rgba(51,102,204, 0.7), -2.6em 0em 0 0em #3b77c0, -1.8em -1.8em 0 0em rgba(51,102,204, 0.2);
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.5), -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.7), -2.6em 0em 0 0em #3b77c0, -1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2);
   }
   87.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(51,102,204, 0.2), 1.8em -1.8em 0 0em rgba(51,102,204, 0.2), 2.5em 0em 0 0em rgba(51,102,204, 0.2), 1.75em 1.75em 0 0em rgba(51,102,204, 0.2), 0em 2.5em 0 0em rgba(51,102,204, 0.2), -1.8em 1.8em 0 0em rgba(51,102,204, 0.5), -2.6em 0em 0 0em rgba(51,102,204, 0.7), -1.8em -1.8em 0 0em #3b77c0;
+    box-shadow: 0em -2.6em 0em 0em rgba(51, 102, 204, 0.2), 1.8em -1.8em 0 0em rgba(51, 102, 204, 0.2), 2.5em 0em 0 0em rgba(51, 102, 204, 0.2), 1.75em 1.75em 0 0em rgba(51, 102, 204, 0.2), 0em 2.5em 0 0em rgba(51, 102, 204, 0.2), -1.8em 1.8em 0 0em rgba(51, 102, 204, 0.5), -2.6em 0em 0 0em rgba(51, 102, 204, 0.7), -1.8em -1.8em 0 0em #3b77c0;
   }
 }
 
@@ -1364,7 +1380,7 @@ main {
   }
 
   .pictures {
-    -ms-grid-columns: (1fr)[5];
+    -ms-grid-columns: (1fr) [ 5 ];
     grid-template-columns: repeat(5, 1fr);
   }
 
@@ -1385,7 +1401,7 @@ main {
   }
 
   .pictures {
-    -ms-grid-columns: (1fr)[3];
+    -ms-grid-columns: (1fr) [ 3 ];
     grid-template-columns: repeat(3, 1fr);
   }
 
