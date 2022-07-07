@@ -715,6 +715,11 @@ main {
   resize: none;
 }
 
+.text__description::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 /*
 Блок обработки ошибок при валидации хэштегов и комментария к изображению
 */
@@ -729,6 +734,10 @@ main {
   max-width: 450px;
   text-align: left;
   text-transform: none;
+}
+
+.has-danger .text__description + .text-help {
+  margin: 0 auto;
 }
 
 /**
