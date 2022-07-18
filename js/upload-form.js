@@ -1,8 +1,7 @@
 import {BODY} from './constants.js';
 import {sendForm} from './api.js';
-import {bigPicture} from './big-picture.js';
+import {bigPicture} from './render-big-photo-modal.js';
 import {resetPhotoEffects} from './image-editing.js';
-import {showAlert} from './util.js';
 
 const imgUploadForm = document.querySelector('.img-upload__form');
 const uploadFile = imgUploadForm.querySelector('#upload-file');

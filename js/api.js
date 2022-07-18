@@ -1,6 +1,5 @@
 import {renderBigPhotoModal} from './render-big-photo-modal.js';
 import {showAlert} from './util.js';
-//import {renderPublications} from './miniature-picture.js';
 import {getPublications} from './filter.js';
 
 fetch('https://25.javascript.pages.academy/kekstagram/data')
@@ -24,7 +23,7 @@ const sendForm = (formData, onSuccess, fail) => {
   fetch('https://25.javascript.pages.academy/kekstagram',
     {
       method: 'POST',
-      body: formData,
+      body: formData
     })
     .then((response) => {
       if (response.ok) {
