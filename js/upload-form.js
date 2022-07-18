@@ -1,6 +1,6 @@
 import {BODY} from './constants.js';
 import {sendForm} from './api.js';
-import {bigPicture} from './render-big-photo-modal.js';
+import {photoDataSection} from './render-photo-data-section.js';
 import {resetPhotoEffects} from './image-editing.js';
 
 const imgUploadForm = document.querySelector('.img-upload__form');
@@ -128,8 +128,8 @@ const onEscapeKeydown = (evt) => {
     if (imgOverlay.classList.contains('hidden') && !successMassage.classList.contains('hidden')) {
       closeMassage(successMassage);
     }
-    if (!bigPicture.classList.contains('hidden')) {
-      bigPicture.classList.add('hidden');
+    if (!photoDataSection.classList.contains('hidden')) {
+      photoDataSection.classList.add('hidden');
       BODY.classList.remove('modal-open');
     }
   }

@@ -13,7 +13,6 @@ const updateData = (modifiedData) => {
 
 const getPublications = (data) => {
   renderPublications(data);
-  
   function setDiscussedClick(cb) {
     imgFilters.addEventListener('click', (evt) => {
       if (evt.target.className === 'img-filters__button') {
@@ -46,7 +45,6 @@ const getPublications = (data) => {
       }
     });
   }
-  
   setDiscussedClick(debounce(() => renderPublications(newData), 500));
 };
 

@@ -1,6 +1,6 @@
-import {renderBigPhotoModal} from './render-big-photo-modal.js';
+import {renderPhotoDataSection} from './render-photo-data-section.js';
 import {showAlert} from './util.js';
-import {getPublications} from './filter.js';
+import {getPublications} from './post-filtering.js';
 
 fetch('https://25.javascript.pages.academy/kekstagram/data')
   .then((response) => {
@@ -9,7 +9,7 @@ fetch('https://25.javascript.pages.academy/kekstagram/data')
         .then((data) => {
           //renderPublications(data);
           getPublications(data);
-          renderBigPhotoModal(data);
+          renderPhotoDataSection(data);
         });
     } else {
       showAlert('Загрузить фоточки не получилось &#128532; Попробуй ещё &#128579;');

@@ -1,4 +1,4 @@
-import {imgFilters} from './filter.js';
+import {imgFilters} from './post-filtering.js';
 
 const containerUsersPicture = document.querySelector('.pictures.container');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
