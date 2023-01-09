@@ -1,12 +1,7 @@
-# Личный проект «Кекстограм 2022»
+# Личный проект [«Кекстограм 2022»](https://ruslanpro01.github.io/Kekstogram/)
 
 * Студент: [Руслан Шевченко](https://htmlacademy.ru/profile/ruslanpro01).
 * Наставник: `Кекс`.
-
----
-
-_Не удаляйте и не изменяйте самовольно файлы и папки:_
-_`.editorconfig`, `.eslintrc`, `.gitattributes`, `.gitignore`, `package-lock.json`, `package.json`., `.github`_
 
 ---
 
